@@ -40,9 +40,6 @@ services:
     expose:
       - 80
 
-    # ports:
-    #   - 8080:80
-
     environment:
       - WORDPRESS_DB_HOST=wordpress-db
       - WORDPRESS_DB_USER=wordpress
@@ -57,7 +54,7 @@ services:
       - wordpress_net
 
     ports:
-      - 8080:80
+      - 80:80
 
     volumes:
       - ./.nginx.conf:/etc/nginx/nginx.conf

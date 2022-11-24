@@ -1,0 +1,40 @@
+---
+volumes:
+  db_data:
+  wp_data:
+
+services:
+  # :: Primary stack database
+  wordpress-db:
+    image: mariadb:latest
+    restart: always
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+    expose:
+      - 3306
+      - 33060
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+
+  #  :: Core webserver
+  wordpress-core:
+    image: wordpress:latest
+    restart: always
+
+    volumes:
+      - wp_data:/var/www/html
+
+    ports:
+      - 8080:80
+
+    environment:
+      - WORDPRESS_DB_HOST=wordpress-db
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress

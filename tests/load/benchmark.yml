@@ -1,0 +1,18 @@
+---
+# :: Scenarios file for `drill`.
+#    @see https://github.com/fcsonline/drill
+
+concurrency: 10
+base: 'http://46.137.238.45:8080'
+iterations: 10000
+rampup: 2
+
+plan:
+  - name: Generate search string
+    assign: search_string
+    exec:
+      command: 'openssl rand -hex 24'
+
+  - name: Perform search
+    request:
+      url: /?s={{ search_string }}

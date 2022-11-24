@@ -1,0 +1,23 @@
+---
+# :: Scenarios file for `drill`.
+#    @see https://github.com/fcsonline/drill
+
+concurrency: 10
+base: 'http://demostation'
+iterations: 10000
+rampup: 2
+
+plan:
+  - name: Visit random post page
+    request:
+      url: /?p={{ item }}
+    with_items:
+      - 1
+      - 1153
+      - 1164
+      - 1241
+      - 1178
+      - 1176
+      - 996
+      - 993
+      - 1446

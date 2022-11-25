@@ -2,9 +2,9 @@
 # :: Scenarios file for `drill`.
 #    @see https://github.com/fcsonline/drill
 
-concurrency: 10
+concurrency: 30
 base: 'http://demostation'
-iterations: 50
+iterations: 30
 rampup: 2
 
 plan:

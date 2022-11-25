@@ -3,7 +3,7 @@
 #    @see https://github.com/fcsonline/drill
 
 concurrency: 10
-base: 'http://46.137.238.45'
+base: 'http://demostation'
 iterations: 10000
 rampup: 2
 

@@ -4,7 +4,7 @@
 
 concurrency: 10
 base: 'http://demostation'
-iterations: 30
+iterations: 50
 rampup: 2
 
 plan:
